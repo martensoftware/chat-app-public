@@ -1,0 +1,7 @@
+{
+  "appId": "com.marten.chatapp",
+  "appName": "chatapp",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

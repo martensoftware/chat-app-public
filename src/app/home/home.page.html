@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Messaging
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding #content>
+  <ion-list>
+    <ion-list-header>
+      <ion-label>Messages</ion-label>
+    </ion-list-header>
+    <ion-item *ngFor="let message of messages" lines="none">
+      <ion-chip outline style="font-size: 20px" [slot]="message.slot" [color]="message.color">
+        {{message.message}}
+        <ion-note>{{message.date}}</ion-note>
+      </ion-chip>
+      <!-- <ion-badge [slot]="message.slot">{{message.name}}</ion-badge> -->
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+
+<ion-footer padding>
+  <form>
+  <ion-item>
+    <ion-input placeholder="message" [formControl]="newMessage" (keyup.enter)="sendMessage()"></ion-input>
+    <ion-button type="submit" (click)="sendMessage()">Send</ion-button>
+  </ion-item>
+  </form>
+</ion-footer>
+
